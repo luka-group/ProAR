@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ProAR transforms autoregressive video generation into a visual reasoning process through prospective guidance.">
+  <meta name="theme-color" content="#faf9f6">
+  <title>ProAR · Learning Prospective Reasoning</title>
+  <link rel="icon" href="favicon.ico?v=2" sizes="any">
+  <link rel="icon" href="images/favicon.svg?v=2" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png?v=2">
+  <link rel="stylesheet" href="styles.css?v=restore-gt-4">
+  <script src="script.js?v=worldarena-names-2" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="wordmark" href="#"><span>Pro</span>AR<span class="brand-dot"></span></a>
+      <div class="nav-links"><a href="#idea">The idea</a><a href="#method">Method</a><a href="#results">Results</a><a href="#citation">Citation</a></div>
+      <a class="nav-paper" href="paper.pdf" target="_blank" rel="noopener">Paper ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <p class="eyebrow">Autoregressive video · Prospective reasoning</p>
+      <h1><span class="hero-name"><span>Pro</span>AR</span>Learning Prospective Reasoning<br class="desktop-break"> with Autoregressive Video Models</h1>
+      <p class="authors">Linghui Shen<sup>1</sup><span>·</span><a href="https://darthzhu.github.io/" target="_blank" rel="noopener">Tinghui Zhu</a><sup>2</sup><span>·</span><a href="https://sheng-z.github.io/" target="_blank" rel="noopener">Sheng Zhang</a><sup>3</sup><span>·</span><a href="https://muhaochen.github.io/" target="_blank" rel="noopener">Muhao Chen</a><sup>2</sup></p>
+      <p class="affiliations"><span><sup>1</sup> The Hong Kong Polytechnic University</span><span><sup>2</sup> University of California, Davis</span><span><sup>3</sup> Microsoft</span></p>
+      <p class="hero-summary">ProAR transforms autoregressive video generation into a visual reasoning process through <strong>prospective guidance.</strong></p>
+      <div class="hero-actions">
+        <a class="button" href="https://arxiv.org/" target="_blank" rel="noopener"><svg class="resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3 18.5 21M19 3l-6 8M10.5 14 5 21"/><path d="m5 3 4.5 1L19 20l-.5 1" stroke-width="1.3"/></svg> arXiv</a>
+        <a class="button primary" href="paper.pdf" target="_blank" rel="noopener"><svg class="resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6M9 16h6"/></svg> PDF</a>
+        <a class="button" href="https://github.com/luka-group/ProAR" target="_blank" rel="noopener"><svg class="resource-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297C5.37.297 0 5.67 0 12.297c0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.043-1.61-4.043-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.087-.744.083-.729.083-.729 1.205.084 1.838 1.237 1.838 1.237 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.605-2.665-.303-5.467-1.334-5.467-5.931 0-1.31.469-2.381 1.236-3.221-.123-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 0 1 3.003-.404c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.655 1.652.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.625-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.015 2.898-.015 3.293 0 .322.216.694.825.576C20.565 22.092 24 17.597 24 12.297c0-6.627-5.373-12-12-12"/></svg> Code</a>
+        <a class="button" href="https://huggingface.co/LinghuiShen/ProAR" target="_blank" rel="noopener"><img class="resource-icon" src="images/huggingface.svg" width="20" height="20" alt="" aria-hidden="true"> Hugging Face</a>
+        <a class="button" href="#citation"><span class="resource-icon" aria-hidden="true">❞</span> BibTeX</a>
+        <a class="button" href="#results"><span class="resource-icon" aria-hidden="true">↓</span> Explore the results</a>
+      </div>
+    </section>
+
+    <section class="section wrap" id="idea">
+      <div class="section-heading"><p class="eyebrow">01 / The idea</p><h2>From Reactive to<br class="mobile-break"> Prospective Generation</h2><p><strong>Video-native reasoning</strong> solves tasks by directly generating a sequence of visual states, with applications in physical reasoning and embodied intelligence.</p></div>
+      <div class="requirements">
+        <figure class="task-example">
+          <div class="example-label"><span>Stable Sort</span><span class="pill">Ground truth</span></div>
+          <video class="gt-video" src="videos/stablesort_gt.mp4" poster="images/stablesort-gt.jpg" controls muted loop playsinline preload="metadata" aria-label="Ground-truth Stable Sort demonstration"></video>
+          <figcaption>Group shapes by type and order each group from smallest to largest.</figcaption>
+        </figure>
+        <div class="requirements-copy"><p class="eyebrow">Two requirements for reasoning</p>
+          <article class="requirement"><span class="number">01</span><div><h3>Goal completion</h3><p>The final state must satisfy the task objective.</p><span class="micro-label outcome-text">The right destination</span></div></article>
+          <article class="requirement"><span class="number">02</span><div><h3>Progression validity</h3><p>Intermediate transitions must follow task logic or physical constraints.</p><span class="micro-label transition-text">Valid steps along the way</span></div></article>
+        </div>
+      </div>
+      <p class="bridge">Standard autoregressive models react to past history through <strong>next-chunk prediction.</strong><br>Locally plausible predictions therefore do not ensure <strong>goal completion</strong> or <strong>valid progression.</strong></p>
+      <figure class="paper-figure"><a href="images/overview_cropped.pdf" target="_blank" rel="noopener" aria-label="Open overview figure at full resolution"><img src="images/overview_cropped.png" width="1600" height="495" loading="lazy" alt="Standard AR predicts the next chunk reactively; ProAR anticipates future transitions and outcomes to guide generation toward task completion."></a><figcaption>From reacting to the past to anticipating the future.</figcaption></figure>
+    </section>
+
+    <section class="method-band" id="method"><div class="section wrap">
+      <div class="section-heading"><p class="eyebrow">02 / The method</p><h2>Learning Prospective Reasoning</h2><p><strong>Prospective reasoning</strong> anticipates future outcomes and state transitions from observed history and uses these expectations to guide current generation.</p><p>ProAR introduces two complementary mechanisms: outcome guidance and transition guidance.</p></div>
+      <figure class="paper-figure"><a href="images/ProAR-Model_cropped.pdf" target="_blank" rel="noopener" aria-label="Open ProAR architecture at full resolution"><img src="images/ProAR-Model_cropped.png" width="1600" height="643" loading="lazy" alt="ProAR architecture: history, current and goal streams; asymmetric attention for outcome guidance; training-only future representation alignment for transition guidance."></a><figcaption>A shared backbone. Two complementary forms of guidance.</figcaption></figure>
+      <div class="mechanisms">
+        <article class="mechanism outcome"><p class="eyebrow">Outcome guidance</p><h3>Goal Belief for<br>Long-Horizon Planning</h3><p class="mechanism-question"><em>“What should the generation achieve?”</em></p><p>ProAR jointly predicts the current chunk and an evolving goal frame. Asymmetric attention lets the goal belief guide current generation while shielding it from the noisy current chunk.</p><div class="mechanism-map">Explicit, sparse, long-range → Goal completion</div></article>
+        <article class="mechanism transition"><p class="eyebrow">Transition guidance</p><h3>Representation Self-Alignment for<br>Progressive Reasoning</h3><p class="mechanism-question"><em>“What should happen next?”</em></p><p>Leveraging <strong>teacher forcing in AR training</strong>, ProAR extracts clean next-chunk representations in a <strong>single forward pass</strong>—without an external representation encoder or an additional backbone pass. <br>A lightweight predictor aligns current hidden states with these <br>future targets, encouraging them to anticipate upcoming temporal dynamics.</p><p class="late-start-note"><strong>Late-start alignment.</strong> Transition guidance is activated after an initial training warm-up, once the backbone has learned task-relevant representations.</p><div class="mechanism-map">Implicit, dense, short-range → Progression validity</div></article>
+      </div>
+      <p class="inference-note"><strong>At inference</strong> ProAR predicts its own goal belief without ground-truth future frames; the alignment predictor is removed.<br>Overall inference time increases by only about <strong>10% over standard AR</strong>.</p>
+    </div></section>
+
+    <section class="section wrap" id="results">
+      <div class="section-heading"><p class="eyebrow">03 / Results in action</p><h2>Reasoning through video.</h2><p>From perceptual, spatial, and abstract reasoning tasks to embodied simulation.</p></div>
+      <div id="galleries"></div>
+      <noscript><p>Enable JavaScript to browse synchronized video comparisons. All videos are also available in the videos folder.</p></noscript>
+    </section>
+
+    <section class="efficiency-band" id="efficiency"><div class="section wrap">
+      <div class="section-heading"><p class="eyebrow">04 / Training efficiency</p><h2>Better reasoning. Fewer training steps.</h2></div>
+      <div class="efficiency-grid"><figure class="paper-figure"><a href="images/ar_vs_d2ar_training_curve_cropped.pdf" target="_blank" rel="noopener"><img src="images/ar_vs_d2ar_training_curve_cropped.png" loading="lazy" width="1600" height="1055" alt="VBVR 10-task mean score versus training steps: ProAR exceeds the fully trained AR baseline at 2,500 steps."></a><figcaption>Mean score on the VBVR 10-task subset.</figcaption></figure><div class="efficiency-copy"><div class="big-number">25<span>%</span></div><h3>of the training steps</h3><p>ProAR surpasses the fully trained AR baseline after only <strong>2,500 training steps</strong> on the VBVR 10-task subset.</p><div class="score-row"><span>ProAR <small>at 2.5k steps</small></span><strong class="outcome-text">0.7079</strong></div><div class="score-row"><span>AR <small>at 10k steps</small></span><strong>0.6635</strong></div><div class="efficiency-milestone"><p class="eyebrow">A further gain from transition guidance</p><h4>Late start. Continued improvement.</h4><p>After Transition guidance is activated at <strong>7,500 steps</strong>, the mean score rises from <strong>0.7666 to 0.8010</strong> by step 10,000.</p><div class="milestone-values"><div><strong>0.7666</strong><span>7.5k · Transition starts</span></div><span class="milestone-arrow" aria-hidden="true">→</span><div><strong>0.8010</strong><span>10k · Final score</span></div></div></div></div></div>
+    </div></section>
+
+    <section class="section citation wrap" id="citation"><div class="section-heading"><p class="eyebrow">05 / Citation</p><h2>BibTeX</h2><p>If you find this work useful, please consider citing it.</p></div><div class="citation-box"><button id="copy-citation" class="button" type="button">Copy BibTeX</button><pre><code id="bibtex">@misc{shen_proar,
+  title  = {ProAR: Learning Prospective Reasoning with
+            Autoregressive Video Models},
+  author = {Shen, Linghui and Zhu, Tinghui and
+            Zhang, Sheng and Chen, Muhao}
+}</code></pre></div><p class="citation-note">Publication details will be updated with the public release.</p><p id="copy-status" class="sr-only" role="status"></p></section>
+  </main>
+  <footer class="wrap"><a class="wordmark" href="#"><span>Pro</span>AR</a><p>Learning to anticipate. Generating toward a goal.</p><a href="paper.pdf" target="_blank" rel="noopener">Paper ↗</a></footer>
+</body>
+</html>

@@ -1,0 +1,7 @@
+ProAR poster v1
+Created with built-in image_gen, using ProAR video frames as visual references.
+This is a generated promotional composition, not a pixel-preserving montage.
+The generator redrew some scene details; do not use it as quantitative or qualitative experimental evidence.
+
+Source frames: final frames (duration minus 0.25 seconds) from StableSort2.mp4,
+flowfree1b.mp4, maze2b.mp4, embodied_bread2.mp4, embodied_shoes2.mp4.
