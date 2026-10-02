@@ -1,0 +1,101 @@
+# VBVR-10Tasks Outcome stage (steps 0-7,500).
+# Current sees history/current/goal;
+# goal sees history/goal but not noisy current.
+# Two GPUs x batch 1 x gradient accumulation 8 = global batch 16.
+
+infra:
+  sequence_parallel_size: 1
+  sharding_strategy: full
+  mixed_precision: true
+  gradient_checkpointing: true
+  vae_halo_latents: 0
+  generator_fsdp_wrap_strategy: size
+  text_encoder_fsdp_wrap_strategy: size
+
+model_kwargs:
+  model_name: Wan2.2-TI2V-5B
+  timestep_shift: 5.0
+  num_frame_per_block: 4
+  local_attn_size: -1
+
+algorithm:
+  trainer: diffusion
+  i2v: true
+  causal: true
+  teacher_forcing: true
+  independent_first_frame: true
+  future_lookahead: true
+  lookahead_layout: goal_frame
+  lookahead_current_attends_endpoint: true
+  lookahead_first_current_attends_endpoint: true
+  lookahead_goal_attends_current: false
+  lookahead_goal_attends_i2v_context: true
+  endpoint_loss_weight: 0.25
+  share_endpoint_noise_across_replicas: true
+  num_train_timestep: 1000
+  denoising_loss_type: flow
+
+training:
+  lr: 5.0e-06
+  weight_decay: 0.0
+  beta1: 0.0
+  beta2: 0.999
+  batch_size: 1
+  gradient_accumulation_steps: 8
+  ema_weight: 0.0
+  ema_start_step: 100000000
+  log_iters: 1250
+  max_checkpoints: 20
+  max_iters: 7500
+  gc_interval: 100
+  allow_padding: true
+  min_latent_frames: 4
+  uniform_prompt: true
+  variable_length: true
+  task_balanced_sampling: true
+  dataset_sample_warning_seconds: 10
+  dataset_sample_warning_interval_seconds: 30
+  reset_rng_after_init: true
+  error_recycling:
+    enabled: false
+
+data:
+  data_path: ./data/vbvr-datasets-10tasks
+  eval_data_path: ./data/vbvr-bench-10tasks
+  target_fps: 16
+  image_or_video_shape:
+  - 1
+  - 32
+  - 48
+  - 32
+  - 32
+  load_raw_video: true
+
+inference:
+  disable_lookahead: false
+  sampling_steps: 20
+  sink_size: 1
+  multi_shot_sink: true
+  multi_shot_rope_offset: 4
+  guidance_scale: 3.0
+  independent_first_frame: true
+  negative_prompt: '色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走'
+
+evaluation:
+  interval: 625
+  num_frames: 28
+  match_gt_length: true
+  task_inference_chunks_path: configs/vbvr_task_inference_chunks_p90.json
+  max_num_frames: 36
+  random_task_count: 0
+  samples_per_task: 2
+  max_samples: 20
+  use_ema: false
+  val_batch_size: 1
+  save_latents_only: false
+
+logging:
+  seed: 0
+  wandb_key: null
+  wandb_entity: null
+  wandb_project: AR-VBVR-10tasks-CurLastFrame-Pattern2

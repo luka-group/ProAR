@@ -1,0 +1,36 @@
+# Core training and inference (versions from the released ar-vr environment)
+torch==2.8.0
+torchvision==0.23.0
+diffusers==0.31.0
+transformers==5.12.1
+tokenizers==0.22.2
+accelerate==1.14.0
+safetensors==0.8.0
+
+# Model configuration and training utilities
+omegaconf==2.3.1
+easydict==1.13
+einops==0.8.2
+ftfy==6.3.1
+regex==2026.5.9
+sentencepiece==0.2.1
+tqdm==4.68.3
+wandb==0.28.0
+
+# Video and dataset I/O
+numpy==2.2.6
+pillow==11.3.0
+av==13.1.0
+decord==0.6.0
+imageio==2.37.3
+imageio-ffmpeg==0.6.0
+opencv-python-headless==5.0.0.93
+h5py==3.16.0
+datasets==5.0.0
+huggingface-hub[cli]==1.31.0
+PyYAML==6.0.3
+scipy==1.15.3
+
+# Optional optimized attention kernels. Install after PyTorch on a supported
+# CUDA system if desired:
+#   pip install flash-attn==2.8.3.post1 --no-build-isolation
