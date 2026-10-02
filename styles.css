@@ -31,3 +31,13 @@
 .milestone-values div span{font-size:10px;color:var(--muted)}
 .milestone-arrow{color:var(--blue)}
 @media(max-width:760px){.hero-actions{max-width:420px;margin-left:auto;margin-right:auto}.hero-actions .button{padding:9px 13px;font-size:12px}.efficiency-milestone{padding:18px}.mechanism-map{font-size:11px}}
+
+.hero.hero-with-teaser{padding-top:52px;padding-bottom:38px}
+.hero-with-teaser h1{font-size:clamp(26px,3vw,38px)}
+.hero-with-teaser .hero-name{font-size:clamp(58px,6.5vw,76px);letter-spacing:-3.5px;margin-bottom:16px}
+.hero-with-teaser .authors{margin-top:20px}
+.hero-with-teaser .hero-summary{margin-top:22px;font-size:18px;line-height:1.6}
+.hero-with-teaser .hero-actions{margin-top:20px}
+.hero-teaser{max-width:900px;margin:28px auto 0;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:var(--paper)}
+.hero-teaser img{display:block;width:100%;height:auto}
+@media(max-width:760px){.hero.hero-with-teaser{padding-top:34px;padding-bottom:28px}.hero-with-teaser .hero-summary{font-size:16px;margin-top:18px}.hero-teaser{margin-top:22px;border-radius:9px}}

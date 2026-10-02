@@ -17,6 +17,4 @@ Open http://localhost:8000 in your browser. Stop the server with Ctrl+C.
 - `images/posters/`: static video previews for lazy loading.
 - `paper.pdf`: the supplied manuscript.
 
-VBVR has five pages of two tasks; VideoRLVR has two pages of three tasks; WorldArena has one page of three tasks. Left is always AR; right is ProAR. Shorter videos hold their final frame until the longest finishes. Visible comparisons play automatically except when reduced motion is preferred. Controls can pause or replay the complete group.
 
-Before public release, confirm paper publication metadata and replace the provisional BibTeX. Add Code and Models links once their destinations are available.

@@ -9,7 +9,7 @@
   <link rel="icon" href="favicon.ico?v=2" sizes="any">
   <link rel="icon" href="images/favicon.svg?v=2" type="image/svg+xml">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png?v=2">
-  <link rel="stylesheet" href="styles.css?v=restore-gt-4">
+  <link rel="stylesheet" href="styles.css?v=compact-hero-6">
   <script src="script.js?v=worldarena-names-2" defer></script>
 </head>
 <body>
@@ -17,25 +17,29 @@
     <nav class="nav wrap" aria-label="Main navigation">
       <a class="wordmark" href="#"><span>Pro</span>AR<span class="brand-dot"></span></a>
       <div class="nav-links"><a href="#idea">The idea</a><a href="#method">Method</a><a href="#results">Results</a><a href="#citation">Citation</a></div>
-      <a class="nav-paper" href="paper.pdf" target="_blank" rel="noopener">Paper ↗</a>
+      <a class="nav-paper" href="#" aria-disabled="true" onclick="return false;" title="PDF link to be added">Paper ↗</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero wrap">
+    <section class="hero wrap hero-with-teaser">
       <p class="eyebrow">Autoregressive video · Prospective reasoning</p>
       <h1><span class="hero-name"><span>Pro</span>AR</span>Learning Prospective Reasoning<br class="desktop-break"> with Autoregressive Video Models</h1>
-      <p class="authors">Linghui Shen<sup>1</sup><span>·</span><a href="https://darthzhu.github.io/" target="_blank" rel="noopener">Tinghui Zhu</a><sup>2</sup><span>·</span><a href="https://sheng-z.github.io/" target="_blank" rel="noopener">Sheng Zhang</a><sup>3</sup><span>·</span><a href="https://muhaochen.github.io/" target="_blank" rel="noopener">Muhao Chen</a><sup>2</sup></p>
+      <p class="authors"><a href="https://scholar.google.com/citations?user=rbJSgZoAAAAJ" target="_blank" rel="noopener">Linghui Shen</a><sup>1</sup><span>·</span><a href="https://darthzhu.github.io/" target="_blank" rel="noopener">Tinghui Zhu</a><sup>2</sup><span>·</span><a href="https://sheng-z.github.io/" target="_blank" rel="noopener">Sheng Zhang</a><sup>3</sup><span>·</span><a href="https://muhaochen.github.io/" target="_blank" rel="noopener">Muhao Chen</a><sup>2</sup></p>
       <p class="affiliations"><span><sup>1</sup> The Hong Kong Polytechnic University</span><span><sup>2</sup> University of California, Davis</span><span><sup>3</sup> Microsoft</span></p>
       <p class="hero-summary">ProAR transforms autoregressive video generation into a visual reasoning process through <strong>prospective guidance.</strong></p>
+      <!-- TODO: Replace the three PDF/Paper placeholder links with the arXiv PDF URL; remove aria-disabled and onclick. -->
       <div class="hero-actions">
         <a class="button" href="https://arxiv.org/" target="_blank" rel="noopener"><svg class="resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3 18.5 21M19 3l-6 8M10.5 14 5 21"/><path d="m5 3 4.5 1L19 20l-.5 1" stroke-width="1.3"/></svg> arXiv</a>
-        <a class="button primary" href="paper.pdf" target="_blank" rel="noopener"><svg class="resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6M9 16h6"/></svg> PDF</a>
+        <a class="button primary" href="#" aria-disabled="true" onclick="return false;" title="PDF link to be added"><svg class="resource-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6M9 16h6"/></svg> PDF</a>
         <a class="button" href="https://github.com/luka-group/ProAR" target="_blank" rel="noopener"><svg class="resource-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297C5.37.297 0 5.67 0 12.297c0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.043-1.61-4.043-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.087-.744.083-.729.083-.729 1.205.084 1.838 1.237 1.838 1.237 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.605-2.665-.303-5.467-1.334-5.467-5.931 0-1.31.469-2.381 1.236-3.221-.123-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 0 1 3.003-.404c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.655 1.652.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.625-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.015 2.898-.015 3.293 0 .322.216.694.825.576C20.565 22.092 24 17.597 24 12.297c0-6.627-5.373-12-12-12"/></svg> Code</a>
         <a class="button" href="https://huggingface.co/LinghuiShen/ProAR" target="_blank" rel="noopener"><img class="resource-icon" src="images/huggingface.svg" width="20" height="20" alt="" aria-hidden="true"> Hugging Face</a>
         <a class="button" href="#citation"><span class="resource-icon" aria-hidden="true">❞</span> BibTeX</a>
         <a class="button" href="#results"><span class="resource-icon" aria-hidden="true">↓</span> Explore the results</a>
       </div>
+      <figure class="hero-teaser">
+        <img src="images/proar-teaser.png" width="1672" height="941" fetchpriority="high" alt="ProAR promotional teaser featuring shape sorting, FlowFree, maze navigation, and robotic manipulation scenes.">
+      </figure>
     </section>
 
     <section class="section wrap" id="idea">
@@ -57,7 +61,7 @@
 
     <section class="method-band" id="method"><div class="section wrap">
       <div class="section-heading"><p class="eyebrow">02 / The method</p><h2>Learning Prospective Reasoning</h2><p><strong>Prospective reasoning</strong> anticipates future outcomes and state transitions from observed history and uses these expectations to guide current generation.</p><p>ProAR introduces two complementary mechanisms: outcome guidance and transition guidance.</p></div>
-      <figure class="paper-figure"><a href="images/ProAR-Model_cropped.pdf" target="_blank" rel="noopener" aria-label="Open ProAR architecture at full resolution"><img src="images/ProAR-Model_cropped.png" width="1600" height="643" loading="lazy" alt="ProAR architecture: history, current and goal streams; asymmetric attention for outcome guidance; training-only future representation alignment for transition guidance."></a><figcaption>A shared backbone. Two complementary forms of guidance.</figcaption></figure>
+      <figure class="paper-figure"><a href="images/ProAR-Model_cropped.pdf" target="_blank" rel="noopener" aria-label="Open ProAR architecture at full resolution"><img src="images/ProAR-Model_cropped.png?v=1790935123" width="1600" height="642" loading="lazy" alt="ProAR architecture: history, current and goal streams; asymmetric attention for outcome guidance; training-only future representation alignment for transition guidance."></a><figcaption>A shared backbone. Two complementary forms of guidance.</figcaption></figure>
       <div class="mechanisms">
         <article class="mechanism outcome"><p class="eyebrow">Outcome guidance</p><h3>Goal Belief for<br>Long-Horizon Planning</h3><p class="mechanism-question"><em>“What should the generation achieve?”</em></p><p>ProAR jointly predicts the current chunk and an evolving goal frame. Asymmetric attention lets the goal belief guide current generation while shielding it from the noisy current chunk.</p><div class="mechanism-map">Explicit, sparse, long-range → Goal completion</div></article>
         <article class="mechanism transition"><p class="eyebrow">Transition guidance</p><h3>Representation Self-Alignment for<br>Progressive Reasoning</h3><p class="mechanism-question"><em>“What should happen next?”</em></p><p>Leveraging <strong>teacher forcing in AR training</strong>, ProAR extracts clean next-chunk representations in a <strong>single forward pass</strong>—without an external representation encoder or an additional backbone pass. <br>A lightweight predictor aligns current hidden states with these <br>future targets, encouraging them to anticipate upcoming temporal dynamics.</p><p class="late-start-note"><strong>Late-start alignment.</strong> Transition guidance is activated after an initial training warm-up, once the backbone has learned task-relevant representations.</p><div class="mechanism-map">Implicit, dense, short-range → Progression validity</div></article>
@@ -83,6 +87,6 @@
             Zhang, Sheng and Chen, Muhao}
 }</code></pre></div><p class="citation-note">Publication details will be updated with the public release.</p><p id="copy-status" class="sr-only" role="status"></p></section>
   </main>
-  <footer class="wrap"><a class="wordmark" href="#"><span>Pro</span>AR</a><p>Learning to anticipate. Generating toward a goal.</p><a href="paper.pdf" target="_blank" rel="noopener">Paper ↗</a></footer>
+  <footer class="wrap"><a class="wordmark" href="#"><span>Pro</span>AR</a><p>Learning to anticipate. Generating toward a goal.</p><a href="#" aria-disabled="true" onclick="return false;" title="PDF link to be added">Paper ↗</a></footer>
 </body>
 </html>
