@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="#"><img src="https://img.shields.io/badge/arXiv-paper-b31b1b.svg" alt="arXiv"></a>
+  <a href="https://arxiv.org/abs/2610.03664"><img src="https://img.shields.io/badge/arXiv-paper-b31b1b.svg" alt="arXiv"></a>
   <a href="https://luka-group.github.io/ProAR/"><img src="https://img.shields.io/badge/Project-Page-blue.svg" alt="Project Page"></a>
   <a href="https://github.com/luka-group/ProAR"><img src="https://img.shields.io/badge/Code-GitHub-4C8EDA.svg" alt="Code"></a>
   <a href="https://huggingface.co/LinghuiShen/ProAR"><img src="https://img.shields.io/badge/Models-Hugging_Face-F2C94C.svg" alt="Models"></a>
